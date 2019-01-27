@@ -71,13 +71,13 @@ def measure_incremental_spend(data_pre_camp, data_camp, metric, control, by = No
     
     
     if by:
-        a,b = customer_total_trans_pre[by], customer_total_trans[by]
+        a,b = data_pre_camp[by], data_camp[by]
         levels = set(a.append(b))
     else:
         by = 'by'
         data_pre_camp['by'] = 'Overall'
         data_camp['by'] = 'Overall'
-        a,b = customer_total_trans_pre[by], customer_total_trans[by]
+        a,b = data_pre_camp[by], data_camp[by]
         levels = set(a.append(b))
 
     output = pd.DataFrame(columns = [by,'pop','pop_pct','control_spend','expected_spend','actual_spend',
@@ -185,13 +185,13 @@ def measure_incremental_binomial_var(data_pre_camp, data_camp, metric, control, 
 
   
     if by:
-        a,b = customer_total_trans_pre[by], customer_total_trans[by]
+        a,b = data_pre_camp[by], data_camp[by]
         levels = set(a.append(b))
     else:
         by = 'by'
         data_pre_camp['by'] = 'Overall'
         data_camp['by'] = 'Overall'
-        a,b = customer_total_trans_pre[by], customer_total_trans[by]
+        a,b = data_pre_camp[by], data_camp[by]
         levels = set(a.append(b))
         
     
