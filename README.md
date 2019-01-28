@@ -1,4 +1,4 @@
-# Campaign Measurement Functions
+# Campaign Measurement Module
 Useful functions for campaign measurement
 
 ### bound-by-p
