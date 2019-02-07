@@ -2,12 +2,12 @@
 
 # Function to limit a data set by it's p-th percentile
 # Default percentile is 0.99
-def bound_by_p(df,col, p=0.99):
-    if col:
-    	col_entries = df[col].unique()
+def bound_by_p(df,col, by, p=0.99):
+    if by:
+    	col_entries = df[by].unique()
     	for entry in col_entries:
-        	val = df[df[col]==entry][col].quantile(p)
-        	df.loc[(df[col] > val) & (df[by_control] == entry), col] = val
+        	val = df[df[by]==entry][col].quantile(p)
+        	df.loc[(df[col] > val) & (df[by] == entry), col] = val
     else:
         val = df[col].quantile(p)
         df.loc[(df[col] > val), col] = val
