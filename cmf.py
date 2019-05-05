@@ -59,7 +59,6 @@ def test_of_prop(control_success, control_size, test_success, test_size, p_val =
 def measure_incremental_spend(data_pre_camp, data_camp, metric, control, by = None):
     # Data frames must be unique at the customer level
     # Must contain a flag to identify a row as a Control or Test
-    # Metric column must be binary
     
     #Identify the control and metric column using a dictionary
     
